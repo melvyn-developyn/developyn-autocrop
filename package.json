@@ -1,6 +1,6 @@
 {
   "name": "developyn-autocrop",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A small library for autocropping images to remove unneeded borders. Simple and fast.",
   "main": "index.js",
   "scripts": {
