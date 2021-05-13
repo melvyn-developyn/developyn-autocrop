@@ -1,6 +1,8 @@
 # developyn-autocrop
 Small library for auto-cropping unwanted space out of an image while retaining shadows for PNG and JPEGs.
 
+NPM: https://www.npmjs.com/package/developyn-autocrop
+
 ## Before
 ![Before Autocrop](images/precrop-strawberry.jpg "Pre Autocrop")
 
