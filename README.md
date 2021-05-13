@@ -9,7 +9,7 @@ Small library for auto-cropping unwanted space out of an image while retaining s
 
 
 ## Example
-```
+```javascript
 const { autocrop } = require('developyn-autocrop');
 
 (async () => {
@@ -24,4 +24,4 @@ const { autocrop } = require('developyn-autocrop');
         }
     });
 })();
-```js
+```
