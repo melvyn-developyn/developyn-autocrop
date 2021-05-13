@@ -39,7 +39,7 @@ const crop_image = (img, output, { x, y, ex, ey}) =>
  * @property {object} options               - Extra options
  * @property {boolean} options.returnArea   - Return the cropped image coordinates, default is false
  */
-const autocrop = async ({ input, output, bgColor: {r = 255, g = 255, b = 255, a = 255}, options: { returnArea = false } }) => {
+const autocrop = async ({ input, output, bgColor: {r = 255, g = 255, b = 255, a = 255}, options: { returnArea = false } = {} }) => {
     if (!input || !output) throw new Error('Error - Missing paramaters');
 
     const pixels = await get_pixels(input); // 1d Array of our pixels e.g. [1, 2, 3, 4] => [R, G, B, A]
