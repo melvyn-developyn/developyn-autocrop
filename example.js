@@ -5,9 +5,9 @@ const { autocrop } = require('./index.js');
         input: './images/precrop-strawberry.jpg',
         output: './images/postcrop-strawberry.jpg',
         bgColor: {
-            r: 255,
-            g: 255,
-            b: 255,
+            r: 237,
+            g: 237,
+            b: 237,
             a: 255
         }
     });

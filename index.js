@@ -45,11 +45,11 @@ const autocrop = async ({ input, output, bgColor: {r = 255, g = 255, b = 255, a 
     const pixels = await get_pixels(input); // 1d Array of our pixels e.g. [1, 2, 3, 4] => [R, G, B, A]
     const size = sizeOf(input); // The height/width of our image
 
-    let crop_x_start = 0;
-    let crop_x_end = size.width - 1;
+    let crop_x_start = 1;
+    let crop_x_end = size.width;
 
-    let crop_y_start = 0;
-    let crop_y_end = size.height - 1;
+    let crop_y_start = 1;
+    let crop_y_end = size.height;
 
     let rows = []; // Used to store all of the rows that are completely white/match the BG Color
     let columns = []; // Same as rows, but for columns that are all the same colour
@@ -67,7 +67,7 @@ const autocrop = async ({ input, output, bgColor: {r = 255, g = 255, b = 255, a 
             }
         }
 
-        if (is_row_matching_bg) rows.push(y);
+        if (is_row_matching_bg) rows.push(y + 1);
     }
 
     for (let x = 0; x < size.width; x++) {
@@ -83,7 +83,7 @@ const autocrop = async ({ input, output, bgColor: {r = 255, g = 255, b = 255, a 
             }
         }
 
-        if (is_col_matching_bg) columns.push(x);
+        if (is_col_matching_bg) columns.push(x + 1);
     }
 
     if (crop_y_start === rows[0]) {
@@ -119,7 +119,7 @@ const autocrop = async ({ input, output, bgColor: {r = 255, g = 255, b = 255, a 
             else break;
         }
     }
-    
+
     if (crop_x_end === columns[columns.length - 1]) {
         for (let i = columns.length - 1; i > 0; i--) {
             if (i === columns.length - 1) continue;
